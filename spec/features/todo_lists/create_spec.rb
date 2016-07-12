@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "Creating todo lists" do
   it "redirect to the todo list page on success" do
