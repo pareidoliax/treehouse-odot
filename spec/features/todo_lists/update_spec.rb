@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 describe "Updating todo lists" do
+  
+  let!(:todo_list) { TodoList.create(title: 'My Grocery List', description: 'Groceries to buy this week.') }
+
   def update_todo_list(options = {})
     options[:title] ||= 'New Title'
     options[:description] ||= 'A whole new description.'
-    todo_list = TodoList.create(title: 'My Grocery List', description: 'Groceries to buy this week.')
     
     visit "/todo_lists"
     within "#todo_list_#{todo_list.id}" do
