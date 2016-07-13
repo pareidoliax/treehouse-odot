@@ -9,7 +9,7 @@ RSpec.describe TodoList, type: :model do
   end
 
   describe 'associations' do
-
+    it { should have_many(:todo_items).dependent(:destroy) }
   end
 
   describe 'validations' do
