@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Updating todo lists" do
   def update_todo_list(options = {})
-    options[:title] ||= 'My Grocery List'
-    options[:description] ||= 'Groceries to buy this week.'
+    options[:title] ||= 'New Title'
+    options[:description] ||= 'A whole new description.'
     todo_list = TodoList.create(title: 'My Grocery List', description: 'Groceries to buy this week.')
     
     visit "/todo_lists"
@@ -19,7 +19,8 @@ describe "Updating todo lists" do
   it "redirect to the todo list page on success" do
     update_todo_list
     expect(page).to have_content 'Todo list was successfully updated.'
-    expect(page).to have_content 'Title: My Grocery List'
+    expect(page).to have_content 'Title: New Title'
+    expect(page).to have_content 'Description: A whole new description.'
   end
   
   it "displays errors and form on failure" do
