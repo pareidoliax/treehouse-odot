@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'rspec-rails', '~> 3.4.0'
   gem 'pry-byebug'
+  gem 'factory_girl_rails', "~> 4.0"
 end
 
 group :development do
@@ -36,4 +37,7 @@ end
 group :test do
   gem 'capybara', '~> 2.7.0'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'nyan-cat-formatter'
 end
+
+
